@@ -9,12 +9,17 @@ module.exports = {
     index: "./src/index.tsx",
   },
   output: {
-    filename: "index.js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "./dist"),
     library: "zenz-design",
     libraryTarget: "umd",
   },
-  // 添加 eslint-webpack-plugin 插件实例
+  devtool: "inline-source-map",
+  devServer: {
+    compress: true,
+    host: "127.0.0.1",
+    port: 7001,
+  },
   plugins: [
     new ESLintPlugin({ extensions: [".ts", ".js", ".tsx", ".jsx"] }),
     new MiniCssExtractPlugin(),
@@ -27,52 +32,19 @@ module.exports = {
     // module属性用于声明模块处理规则
     rules: [
       {
-        test: /\.js$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"],
-            },
-          },
-        ],
-      },
-      {
-        test: /\.jsx$/,
-        loader: "babel-loader",
-        options: {
-          presets: [
-            "@babel/preset-react",
-            {
-              runtime: "automatic",
-            },
-          ],
-        },
-      },
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-typescript"],
-          },
-        },
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: ["style-loader", "css-loader"],
       },
       {
         test: /\.less$/,
-        use: [
-          //   process.env.NODE_ENV === "development"
-          //     ? "style-loader"
-          //     : MiniCssExtractPlugin,
-          //   ,
-          "style-loader",
-          "css-loader",
-          "less-loader",
-        ],
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader", "less-loader"],
       },
     ],
   },

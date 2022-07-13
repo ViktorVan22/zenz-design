@@ -1,7 +1,9 @@
 // 补充TypeScript配置信息
 {
     "compilerOptions": {
+        "jsx": "react",
         "noImplicitAny": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true
     }
 }

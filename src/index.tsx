@@ -1,9 +1,8 @@
 /**
  * @description 程序主入口
  */
-const say = (statements: string) => {
-  console.log(statements);
-};
-// const a = 3;
+import React from "react";
+import ReactDom from "react-dom";
+import { Button } from "./button";
 
-say("Tecvan");
+ReactDom.render(<Button></Button>, document.body);
