@@ -8,7 +8,6 @@ module.exports = {
   entry: {
     index: "./src/index.tsx",
   },
-  devtool: false,
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "./dist"),
@@ -19,7 +18,10 @@ module.exports = {
   plugins: [
     new ESLintPlugin({ extensions: [".ts", ".js", ".tsx", ".jsx"] }),
     new MiniCssExtractPlugin(),
-    new HTMLWebpackPlugin(),
+    new HTMLWebpackPlugin({
+      title: "Zenz Design",
+      template: "index.html",
+    }),
   ],
   module: {
     // module属性用于声明模块处理规则
@@ -36,23 +38,40 @@ module.exports = {
         ],
       },
       {
-        rules: [
-          {
-            test: /\.tsx?$/,
-            use: {
-              loader: "babel-loader",
-              options: { presets: ["@babel/preset-typescript"] },
+        test: /\.jsx$/,
+        loader: "babel-loader",
+        options: {
+          presets: [
+            "@babel/preset-react",
+            {
+              runtime: "automatic",
             },
+          ],
+        },
+      },
+      {
+        test: /\.tsx?$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-typescript"],
           },
-        ],
+        },
       },
       {
         test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.less$/,
         use: [
-          process.env.NODE_ENV === "development"
-            ? "style-loader"
-            : MiniCssExtractPlugin,
+          //   process.env.NODE_ENV === "development"
+          //     ? "style-loader"
+          //     : MiniCssExtractPlugin,
+          //   ,
+          "style-loader",
           "css-loader",
+          "less-loader",
         ],
       },
     ],
