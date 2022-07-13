@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: {
     index: "./src/index.tsx",
   },
@@ -10,5 +11,20 @@ module.exports = {
     library: "zenz-design",
     libraryTarget: "umd",
   },
-  module: {},
+  module: {
+    // module属性用于声明模块处理规则
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
