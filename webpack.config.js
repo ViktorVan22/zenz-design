@@ -9,7 +9,7 @@ module.exports = {
     index: "./src/index.tsx",
   },
   output: {
-    filename: "[name].[hash].js",
+    filename: "index.js",
     path: path.resolve(__dirname, "./dist"),
     library: "zenz-design",
     libraryTarget: "umd",
