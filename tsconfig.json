@@ -1,0 +1,7 @@
+// 补充TypeScript配置信息
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "moduleResolution": "node"
+    }
+}
