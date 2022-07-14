@@ -1,0 +1,21 @@
+.h {
+  height: 40px;
+  background: #4285f4;
+  margin: 4px 0;
+  color: white;
+}
+.c {
+  background: lighten($color: #4285f4, $amount: 5%);
+  margin: 4px 0;
+  color: white;
+}
+.f {
+  background: lighten($color: #4285f4, $amount: 15%);
+  margin: 4px 0;
+  color: white;
+}
+.a {
+  background: #34a853;
+  color: white;
+  margin: 4px 0;
+}
