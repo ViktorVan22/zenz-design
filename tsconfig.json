@@ -1,31 +1,39 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "declaration": true,
-        "baseUrl": ".",
-        "module": "esnext",
-        "target": "es5",
-        "lib": ["es6", "dom"],
-        "sourceMap": true,
-        "jsx": "react",
-        "rootDir": ".",
-        "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noImplicitAny": true,
-        "importHelpers": true,
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "strictNullChecks": true,
-        "skipLibCheck": true,
-        "noUnusedLocals": true
-    },
-    "exclude": [
-        "node_modules",
-    ],
-    "include": [
-        "types/**/*",
-        "src/**/*"
-    ]
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "rootDir": ".",
+    "removeComments": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "baseUrl": "./",
+    "paths": {
+      // webpack 配置别名，但在TS中会报红找不到，所以tslint也需要配置
+      "@button/*": ["./src/button/*"],
+      "@icon/*": ["./src/icon/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": [
+    "types/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "src/**/*.example.tsx"
+  ]
 }

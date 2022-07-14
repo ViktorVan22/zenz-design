@@ -56,8 +56,8 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx"],
     alias: {
-      button: path.resolve(__dirname, "./src/button"),
-      icon: path.resolve(__dirname, "./src/icon"),
+      "@button": path.resolve(__dirname, "src/button"),
+      "@icon": path.resolve(__dirname, "src/icon"),
     },
   },
 };

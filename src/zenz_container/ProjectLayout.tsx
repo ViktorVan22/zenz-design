@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import { ButtonExample } from "button/button.example";
-import { IconExample } from "icon/icon.example";
+import { ButtonExample } from "@button/button.example";
+import { IconExample } from "@icon/icon.example";
 import { NoMatch } from "./NoMatch";
 
 const ProjectLayout = () => {
