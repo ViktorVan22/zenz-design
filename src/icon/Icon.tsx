@@ -2,15 +2,17 @@ import React from "react";
 import "./icon.scss";
 import "./assets/penguin.svg";
 import "./assets/wechatPay.svg";
+import "./assets/add_linear.svg";
 
 interface Props {
   name: string;
+  className?: string;
   onClick?: (e: React.MouseEvent) => void;
 }
 
-const Icon = ({ name, onClick }: Props) => {
+const Icon = ({ name, className, onClick }: Props) => {
   return (
-    <svg onClick={onClick}>
+    <svg className={className} onClick={onClick}>
       <use xlinkHref={`#${name}`} />
     </svg>
   );
