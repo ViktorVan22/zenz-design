@@ -46,6 +46,11 @@ module.exports = {
         exclude: /node_modules/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        loader: "svg-sprite-loader",
+      },
     ],
   },
   resolve: {
