@@ -1,4 +1,5 @@
 import React from "react";
+import "./icon.scss";
 import "./assets/penguin.svg";
 import "./assets/wechatPay.svg";
 

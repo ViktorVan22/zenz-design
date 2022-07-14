@@ -42,9 +42,9 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.svg$/,
