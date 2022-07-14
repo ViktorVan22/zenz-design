@@ -5,11 +5,12 @@ import "./assets/wechatPay.svg";
 
 interface Props {
   name: string;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-const Icon = ({ name }: Props) => {
+const Icon = ({ name, onClick }: Props) => {
   return (
-    <svg>
+    <svg onClick={onClick}>
       <use xlinkHref={`#${name}`} />
     </svg>
   );
