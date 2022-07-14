@@ -8,4 +8,10 @@
     flex-grow: 1;
     flex-direction: row;
   }
+  &.hasAside {
+    flex-direction: row;
+    .zenz-design-layout {
+      flex-direction: column;
+    }
+  }
 }

@@ -1,14 +1,27 @@
 import React from "react";
 import classnames from "classnames";
 import "./layout.scss";
+import { Aside } from "./aside";
 
 interface LayoutProps extends React.HTMLAttributes<HTMLElement> {
-  children: React.ReactNode | React.ReactNode[];
+  children: React.ReactElement | React.ReactElement[];
 }
 
 const Layout = ({ children, className, ...rest }: LayoutProps) => {
+  const hasAside =
+    "length" in children &&
+    children.reduce((result, node) => result || node.type === Aside, false);
+  console.log("hasAside: ", hasAside);
+  console.log(
+    classnames("zenz-design-layout", className, { hasAside: hasAside })
+  );
   return (
-    <div className={classnames("zenz-design-layout", className)} {...rest}>
+    <div
+      className={classnames("zenz-design-layout", className, {
+        hasAside: hasAside,
+      })}
+      {...rest}
+    >
       {children}
     </div>
   );
