@@ -45,9 +45,9 @@ const Modal = ({
         <main className="zenz-design-modal-main">{children}</main>
         {buttons && (
           <footer className="zenz-design-modal-footer">
-            {buttons.map((button, index) => (
-              <div key={index}>{button}</div>
-            ))}
+            {buttons.map((button, index) =>
+              React.cloneElement(button, { key: index })
+            )}
           </footer>
         )}
       </div>
