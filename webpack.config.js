@@ -17,6 +17,7 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     compress: true,
+    hot: true,
     host: "127.0.0.1",
     port: 7001,
   },

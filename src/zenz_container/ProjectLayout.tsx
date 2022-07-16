@@ -22,10 +22,10 @@ const ProjectLayout = () => {
       <div className="content">
         <Routes>
           <Route path="/" element={<ButtonExample />} />
-          <Route path="button" element={<ButtonExample />} />
-          <Route path="icon" element={<IconExample />} />
-          <Route path="layout" element={<LayoutExample />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route path="/button" element={<ButtonExample />} />
+          <Route path="/icon" element={<IconExample />} />
+          <Route path="/layout" element={<LayoutExample />} />
+          <Route path="/*" element={<NoMatch />} />
         </Routes>
       </div>
     </div>

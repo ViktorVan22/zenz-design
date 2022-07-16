@@ -1,10 +1,10 @@
 import React from "react";
-import { Layout } from "./Layout";
 import "./layout.example.scss";
 import { Aside } from "./aside";
 import { Content } from "./content";
 import { Footer } from "./footer";
 import { Header } from "./header";
+import { Layout } from "./layout";
 
 const LayoutExample = () => {
   //   const rootClassName = "zenz-design-layout";

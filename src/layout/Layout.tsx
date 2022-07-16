@@ -11,10 +11,6 @@ const Layout = ({ children, className, ...rest }: LayoutProps) => {
   const hasAside =
     "length" in children &&
     children.reduce((result, node) => result || node.type === Aside, false);
-  console.log("hasAside: ", hasAside);
-  console.log(
-    classnames("zenz-design-layout", className, { hasAside: hasAside })
-  );
   return (
     <div
       className={classnames("zenz-design-layout", className, {
