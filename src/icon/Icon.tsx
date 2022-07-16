@@ -3,6 +3,7 @@ import "./icon.scss";
 import "./assets/penguin.svg";
 import "./assets/wechatPay.svg";
 import "./assets/add_linear.svg";
+import "./assets/close.svg";
 
 interface Props {
   name: string;

@@ -1,6 +1,10 @@
-.modal-demo {
+.demo-container {
   border: 1px solid black;
-  background: #4285f4;
-  color: white;
-  display: inline-block;
+  > button {
+    background: #4285f4;
+    width: 300px;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+  }
 }
