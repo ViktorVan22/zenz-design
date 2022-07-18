@@ -7,7 +7,7 @@ import ReactDOM from "react-dom";
 interface ModalProps extends HTMLAttributes<HTMLElement> {
   visible: boolean;
   onClose: React.MouseEventHandler;
-  buttons?: React.ReactElement[];
+  footerContents?: React.ReactElement[];
   className?: string;
   title?: string;
   closeOnClickMask?: boolean;
@@ -16,10 +16,10 @@ interface ModalProps extends HTMLAttributes<HTMLElement> {
 const Modal = ({
   visible,
   onClose,
-  buttons,
+  footerContents,
   className,
   title,
-  closeOnClickMask,
+  closeOnClickMask = true,
   children,
   ...rest
 }: ModalProps) => {
@@ -43,10 +43,10 @@ const Modal = ({
           <Icon name="close" onClick={onClickClose} />
         </header>
         <main className="zenz-design-modal-main">{children}</main>
-        {buttons && (
+        {footerContents && (
           <footer className="zenz-design-modal-footer">
-            {buttons.map((button, index) =>
-              React.cloneElement(button, { key: index })
+            {footerContents.map((content, index) =>
+              React.cloneElement(content, { key: index })
             )}
           </footer>
         )}
