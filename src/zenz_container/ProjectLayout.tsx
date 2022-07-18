@@ -5,6 +5,7 @@ import { IconExample } from "@icon/icon.example";
 import { NoMatch } from "./NoMatch";
 import { LayoutExample } from "../layout/layout.example";
 import { ModalExample } from "../modal/modal.example";
+import { CarouselExample } from "../carousel/carousel.example";
 
 const ProjectLayout = () => {
   return (
@@ -22,6 +23,9 @@ const ProjectLayout = () => {
         <li>
           <Link to="/modal">Modal</Link>
         </li>
+        <li>
+          <Link to="carousel">Carousel</Link>
+        </li>
       </ul>
       <div className="content">
         <Routes>
@@ -30,6 +34,7 @@ const ProjectLayout = () => {
           <Route path="/icon" element={<IconExample />} />
           <Route path="/layout" element={<LayoutExample />} />
           <Route path="/modal" element={<ModalExample />} />
+          <Route path="/carousel" element={<CarouselExample />} />
           <Route path="/*" element={<NoMatch />} />
         </Routes>
       </div>
