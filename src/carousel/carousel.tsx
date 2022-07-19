@@ -12,9 +12,13 @@ const Carousel = ({ children, className, ...rest }: CarouselProps) => {
      * @description 点击对应的点就会显示相应的卡片内容
      */
     const nodes = document.getElementsByClassName("child-element-wrapper");
+    const dots = document.getElementsByClassName("dot");
     for (let i = 0; i < children.length; i++) {
       if (nodes[i].classList.contains("slide-active") && i !== n) {
         nodes[i].classList.remove("slide-active");
+      }
+      if (dots[i].classList.contains("dot-active") && i !== n) {
+        dots[i].classList.remove("dot-active");
       }
     }
     // 点击事件发生后关闭默认展示
@@ -22,6 +26,7 @@ const Carousel = ({ children, className, ...rest }: CarouselProps) => {
       nodes[0].classList.remove("default-slide");
     }
     nodes[n].classList.add("slide-active");
+    dots[n].classList.add("dot-active");
   };
 
   return (
@@ -44,19 +49,12 @@ const Carousel = ({ children, className, ...rest }: CarouselProps) => {
           </div>
         </div>
       ))}
-      <footer>
+      <footer className="dot-wrapper">
         {children.map(child => (
           <div
             key={children.indexOf(child)}
             className="dot"
             onClick={() => showSlide(children.indexOf(child))}
-            style={{
-              display: "inline-block",
-              width: "20px",
-              height: "20px",
-              background: "red",
-              border: "1px solid black",
-            }}
           ></div>
         ))}
       </footer>

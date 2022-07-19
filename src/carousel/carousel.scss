@@ -9,6 +9,27 @@
 .slide-active {
   display: block;
 }
+
+.dot-wrapper {
+  text-align: center;
+  position: relative;
+  top: -30px;
+  > .dot {
+    display: inline-block;
+    width: 30px;
+    height: 5px;
+    background: white;
+    margin: 0 4px;
+    &.dot-active {
+      background: gray;
+      width: 50px;
+    }
+    &:hover {
+      background: gray;
+    }
+  }
+}
+
 /* 淡出动画 */
 .fade {
   -webkit-animation-name: fade;

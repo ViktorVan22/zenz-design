@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "./carousel";
-import { CarouselCopy } from "./carouselCopy";
+import { CarouselAutoplay } from "./carouselAutoplay";
 
 const contentStyle: React.CSSProperties = {
   height: "160px",
@@ -28,24 +28,14 @@ const CarouselExample = () => {
           <h3 style={contentStyle}>4</h3>
         </div>
       </Carousel>
-      <h2>抄来的滑动轮播图</h2>
-      <CarouselCopy>
-        <li>
-          <h3 style={contentStyle}>1</h3>
-        </li>
-        <li>
-          <h3 style={contentStyle}>2</h3>
-        </li>
-        <li>
-          <h3 style={contentStyle}>3</h3>
-        </li>
-        <li>
-          <h3 style={contentStyle}>4</h3>
-        </li>
-        <li>
-          <h3 style={contentStyle}>5</h3>
-        </li>
-      </CarouselCopy>
+      <h2>自动播放滑动轮播图</h2>
+      <CarouselAutoplay>
+        <h3 style={{ ...contentStyle, width: "100%" }}>1</h3>
+        <h3 style={{ ...contentStyle, width: "100%" }}>2</h3>
+        <h3 style={{ ...contentStyle, width: "100%" }}>3</h3>
+        <h3 style={{ ...contentStyle, width: "100%" }}>4</h3>
+        <h3 style={{ ...contentStyle, width: "100%" }}>5</h3>
+      </CarouselAutoplay>
     </div>
   );
 };
