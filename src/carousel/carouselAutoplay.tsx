@@ -4,10 +4,16 @@ import classnames from "classnames";
 
 interface Props extends HTMLAttributes<HTMLElement> {
   children: React.ReactElement[];
+  autoplay?: boolean;
   className?: string;
 }
 
-const CarouselAutoplay = ({ className, children, ...rest }: Props) => {
+const CarouselAutoplay = ({
+  className,
+  autoplay,
+  children,
+  ...rest
+}: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -20,33 +26,35 @@ const CarouselAutoplay = ({ className, children, ...rest }: Props) => {
     setActiveIndex(newIndex);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 2000);
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  });
+  autoplay &&
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if (!paused) {
+          updateIndex(activeIndex + 1);
+        }
+      }, 2000);
+      return () => {
+        if (interval) clearInterval(interval);
+      };
+    });
 
   return (
     <div
       className={classnames("carousel", className || "")}
       onMouseEnter={() => {
-        console.log("轮播图暂停播放");
-        setPaused(true);
+        autoplay && setPaused(true);
       }}
       onMouseLeave={() => {
-        console.log("轮播图继续播放");
-        setPaused(false);
+        autoplay && setPaused(false);
       }}
       {...rest}
     >
       <div
-        className="inner"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        className={classnames("inner")}
+        style={{
+          transform: `translateX(-${activeIndex * 100}%)`,
+          transition: "transform 0.5s",
+        }}
       >
         {children.map(childElement => (
           <div className="carousel-item" key={children.indexOf(childElement)}>

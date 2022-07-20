@@ -13,7 +13,7 @@ const contentStyle: React.CSSProperties = {
 const CarouselExample = () => {
   return (
     <div className="demo-container">
-      <h2>常规轮播图</h2>
+      <h2>渐显轮播图</h2>
       <Carousel className="carousel-demo">
         <div>
           <h3 style={contentStyle}>1</h3>
@@ -29,7 +29,7 @@ const CarouselExample = () => {
         </div>
       </Carousel>
       <h2>自动播放滑动轮播图</h2>
-      <CarouselAutoplay>
+      <CarouselAutoplay autoplay>
         <h3 style={{ ...contentStyle, width: "100%" }}>1</h3>
         <h3 style={{ ...contentStyle, width: "100%" }}>2</h3>
         <h3 style={{ ...contentStyle, width: "100%" }}>3</h3>
