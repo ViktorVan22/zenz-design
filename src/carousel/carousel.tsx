@@ -25,17 +25,17 @@ const Carousel = ({ children, className, ...rest }: CarouselProps) => {
       {...rest}
     >
       <div className="carousel-inner">
-        {children.map(child => (
-          <div
-            key={children.indexOf(child)}
-            className={classnames("carousel-item", "fade", {
-              "slide-active":
-                children.indexOf(child) === activeIndex ? true : false,
-            })}
-          >
-            {child}
-          </div>
-        ))}
+        {React.Children.map(children, (child, index) => {
+          return (
+            <div
+              className={classnames("carousel-item", "fade", {
+                "slide-active": index === activeIndex ? true : false,
+              })}
+            >
+              {child}
+            </div>
+          );
+        })}
       </div>
       <div className="carousel-indicators">
         {React.Children.map(children, (child, index) => {
