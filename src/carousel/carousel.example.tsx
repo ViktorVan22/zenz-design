@@ -35,6 +35,7 @@ const CarouselExample = () => {
         <h3 style={{ ...contentStyle, width: "100%" }}>3</h3>
         <h3 style={{ ...contentStyle, width: "100%" }}>4</h3>
         <h3 style={{ ...contentStyle, width: "100%" }}>5</h3>
+        <h3 style={{ ...contentStyle, width: "100%" }}>6</h3>
       </CarouselAutoplay>
     </div>
   );

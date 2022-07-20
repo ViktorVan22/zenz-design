@@ -9,18 +9,16 @@ module.exports = {
     index: "./src/index.tsx",
   },
   output: {
-    filename: "index.js",
     path: path.resolve(__dirname, "./dist"),
     library: "zenz-design",
     libraryTarget: "umd",
   },
-  devtool: "inline-source-map",
-  devServer: {
-    compress: true,
-    hot: true,
-    host: "127.0.0.1",
-    port: 7001,
-  },
+  // devServer: {
+  //   compress: true,
+  //   hot: true,
+  //   host: "127.0.0.1",
+  //   port: 7001,
+  // },
   plugins: [
     new ESLintPlugin({ extensions: [".ts", ".js", ".tsx", ".jsx"] }),
     new MiniCssExtractPlugin(),
@@ -36,11 +34,6 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/,

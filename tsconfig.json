@@ -28,7 +28,17 @@
       "@icon/*": ["./src/icon/*"]
     }
   },
-  "exclude": ["dist", "node_modules"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.js"
+  ],
   "include": [
     "types/**/*",
     "src/**/*.ts",
