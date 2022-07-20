@@ -13,12 +13,12 @@ module.exports = {
     library: "zenz-design",
     libraryTarget: "umd",
   },
-  // devServer: {
-  //   compress: true,
-  //   hot: true,
-  //   host: "127.0.0.1",
-  //   port: 7001,
-  // },
+  devServer: {
+    compress: true,
+    hot: true,
+    host: "127.0.0.1",
+    port: 7001,
+  },
   plugins: [
     new ESLintPlugin({ extensions: [".ts", ".js", ".tsx", ".jsx"] }),
     new MiniCssExtractPlugin(),

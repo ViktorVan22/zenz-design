@@ -8,12 +8,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const CarouselAutoplay = ({
-  className,
-  autoplay,
-  children,
-  ...rest
-}: Props) => {
+const CarouselSlide = ({ className, autoplay, children, ...rest }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -40,7 +35,7 @@ const CarouselAutoplay = ({
 
   return (
     <div
-      className={classnames("carousel", className || "")}
+      className={classnames("zenz-design-carousel-slide", className || "")}
       onMouseEnter={() => {
         autoplay && setPaused(true);
       }}
@@ -80,4 +75,4 @@ const CarouselAutoplay = ({
   );
 };
 
-export { CarouselAutoplay };
+export { CarouselSlide };

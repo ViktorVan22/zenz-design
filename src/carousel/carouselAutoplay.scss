@@ -1,4 +1,4 @@
-.carousel {
+.zenz-design-carousel-slide {
   overflow: hidden;
 }
 
@@ -25,6 +25,7 @@
     height: 5px;
     background: white;
     margin: 0 4px;
+    cursor: pointer;
   }
   > div.active {
     width: 50px;
@@ -37,5 +38,6 @@
   text-align: center;
   > button {
     margin: 0 4px;
+    cursor: pointer;
   }
 }

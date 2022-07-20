@@ -1,25 +1,24 @@
-.child-element-wrapper {
-  display: none;
+.carousel-inner {
+  > .carousel-item {
+    display: none;
+  }
+
+  > .slide-active {
+    display: block;
+  }
 }
 
-.default-slide {
-  display: block;
-}
-
-.slide-active {
-  display: block;
-}
-
-.dot-wrapper {
+.carousel-indicators {
   text-align: center;
   position: relative;
-  top: -30px;
+  top: -70px;
   > .dot {
     display: inline-block;
     width: 30px;
     height: 5px;
     background: white;
     margin: 0 4px;
+    cursor: pointer;
     &.dot-active {
       background: gray;
       width: 50px;
