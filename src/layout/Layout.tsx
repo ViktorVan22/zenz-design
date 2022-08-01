@@ -13,13 +13,18 @@ const Layout = ({ children, className, ...rest }: LayoutProps) => {
     children.reduce((result, node) => result || node.type === Aside, false);
   return (
     <div
-      className={classnames("zenz-design-layout", className, {
-        hasAside: hasAside,
-      })}
+      className={classnames(
+        "zenz-design-layout",
+        hasAside ? "zenz-design-layout-hasAside" : "",
+        className
+      )}
       {...rest}
     >
       {children}
     </div>
+    // <div className={sc({ "": true, hasAside }, { extra: className })} {...rest}>
+    //   {children}
+    // </div>
   );
 };
 
