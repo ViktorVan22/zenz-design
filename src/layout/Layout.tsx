@@ -22,9 +22,6 @@ const Layout = ({ children, className, ...rest }: LayoutProps) => {
     >
       {children}
     </div>
-    // <div className={sc({ "": true, hasAside }, { extra: className })} {...rest}>
-    //   {children}
-    // </div>
   );
 };
 

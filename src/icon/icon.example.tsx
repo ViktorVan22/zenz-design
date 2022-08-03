@@ -1,4 +1,5 @@
 import React from "react";
+import { Highlighter } from "../utils/highlighter";
 import { Icon } from "./Icon";
 import exampleSource from "./source.txt";
 
@@ -14,8 +15,7 @@ const IconExample = () => {
     <>
       <Icon name="wechatPay" onClick={onClickIcon} />
       <Icon name="penguin" onClick={onClickIcon} />
-      <hr />
-      <pre>{exampleSource}</pre>
+      <Highlighter sourceCode={exampleSource} />
     </>
   );
 };

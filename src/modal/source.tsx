@@ -1,8 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { Highlighter } from "../utils/highlighter";
+export const sourceCode = `import React, { Fragment, useState } from "react";
 import { Modal } from "./modal";
 import "./modal.example.scss";
-import { sourceCode } from "./source";
 
 const ModalExample = () => {
   const [visible, setVisible] = useState(false);
@@ -60,9 +58,9 @@ const ModalExample = () => {
           <p>...content</p>
         </Modal>
       </div>
-      <Highlighter sourceCode={sourceCode} />
     </Fragment>
   );
 };
 
 export { ModalExample };
+`;

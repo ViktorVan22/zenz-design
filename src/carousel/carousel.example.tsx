@@ -1,6 +1,8 @@
 import React from "react";
+import { Highlighter } from "../utils/highlighter";
 import { Carousel } from "./carousel";
 import { CarouselSlide } from "./carouselAutoplay";
+import { sourceCode } from "./source";
 
 const contentStyle: React.CSSProperties = {
   height: "160px",
@@ -15,6 +17,7 @@ const CarouselExample = () => {
   return (
     <div className="demo-container">
       <h2>渐显轮播图</h2>
+      <Highlighter sourceCode={sourceCode[0]} />
       <Carousel className="carousel-demo">
         <h3 style={contentStyle}>1</h3>
         <h3 style={contentStyle}>2</h3>
@@ -22,6 +25,7 @@ const CarouselExample = () => {
         <h3 style={contentStyle}>4</h3>
       </Carousel>
       <h2>自动播放滑动轮播图</h2>
+      <Highlighter sourceCode={sourceCode[1]} />
       <CarouselSlide autoplay>
         <h3 style={contentStyle}>1</h3>
         <h3 style={contentStyle}>2</h3>

@@ -5,12 +5,15 @@ import { Content } from "./content";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { Layout } from "./layout";
+import { Highlighter } from "../utils/highlighter";
+import { sourceCode } from "./source";
 
 const LayoutExample = () => {
   //   const rootClassName = "zenz-design-layout";
   return (
     <div>
       <h1>Layout demo 1</h1>
+      <Highlighter sourceCode={sourceCode[0]} />
       <Layout style={{ height: 500, width: 500 }}>
         <Header className="h">Header</Header>
         <Content className="c">Content</Content>
@@ -18,6 +21,7 @@ const LayoutExample = () => {
       </Layout>
       <hr />
       <h1>Layout demo 2</h1>
+      <Highlighter sourceCode={sourceCode[1]} />
       <Layout style={{ height: 500, width: 500 }}>
         <Header className="h">Header</Header>
         <Layout>
@@ -33,6 +37,7 @@ const LayoutExample = () => {
       </Layout>
       <hr />
       <h1>Layout demo 3</h1>
+      <Highlighter sourceCode={sourceCode[2]} />
       <Layout style={{ height: 500, width: 500 }}>
         <Header className="h">Header</Header>
         <Layout>
@@ -48,6 +53,7 @@ const LayoutExample = () => {
       </Layout>
       <hr />
       <h1>Layout demo 4</h1>
+      <Highlighter sourceCode={sourceCode[3]} />
       <Layout style={{ height: 500, width: 500 }}>
         <Aside className="a">
           Aside

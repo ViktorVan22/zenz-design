@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { Highlighter } from "../utils/highlighter";
+export const sourceCode = `import React, { useState } from "react";
 import { Button } from "./button";
 import { IconButton } from "./iconButton";
-import { sourceCode } from "./source";
 
 const ButtonExample = () => {
   const [count, setCount] = useState(0);
@@ -14,7 +12,6 @@ const ButtonExample = () => {
   };
   return (
     <>
-      <Highlighter sourceCode={sourceCode} />
       <h1>demo 1</h1>
       <Button />
       <hr />
@@ -27,6 +24,4 @@ const ButtonExample = () => {
       <div>count: {count} </div>
     </>
   );
-};
-
-export { ButtonExample };
+};`;
