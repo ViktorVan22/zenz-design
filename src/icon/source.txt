@@ -1,0 +1,5 @@
+<>
+    <Icon name="wechatPay" onClick={onClickIcon} />
+    <Icon name="penguin" onClick={onClickIcon} />
+    <hr />
+</>

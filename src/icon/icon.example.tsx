@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "./Icon";
+import exampleSource from "./source.txt";
 
 const IconExample = () => {
   const onClickIcon = (e: React.MouseEvent) => {
@@ -14,6 +15,7 @@ const IconExample = () => {
       <Icon name="wechatPay" onClick={onClickIcon} />
       <Icon name="penguin" onClick={onClickIcon} />
       <hr />
+      <pre>{exampleSource}</pre>
     </>
   );
 };

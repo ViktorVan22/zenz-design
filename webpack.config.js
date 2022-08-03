@@ -45,6 +45,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: "svg-sprite-loader",
       },
+      {
+        test: /\.txt/,
+        type: "asset/source",
+      },
     ],
   },
   resolve: {
